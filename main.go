@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func add(x int, y int) int {
 	return x + y
@@ -34,6 +37,13 @@ func sum_loop() {
 	fmt.Println("result of sum loop:", sum)
 }
 
+func sqrt(x float64) string {
+	if x < 0 {
+		return sqrt(-x) + "i"
+	}
+	return fmt.Sprint(math.Sqrt(x))
+}
+
 func main() {
 	fmt.Println(add(42, 13))
 	fmt.Println(split(17))
@@ -46,4 +56,5 @@ func main() {
 	fmt.Printf("m is of type %T %v\n", m, m)
 
 	sum_loop()
+	fmt.Println(sqrt(2), sqrt(-4))
 }
