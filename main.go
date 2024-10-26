@@ -14,10 +14,19 @@ func split(sum int) (x, y int) {
 
 var c, python, java bool
 
+func short_variable() {
+	var i, j int = 1, 2
+	k := 3
+	c, python, java := true, false, "no!"
+
+	fmt.Println(i, j, k, c, python, java)
+}
+
 func main() {
 	fmt.Println(add(42, 13))
 	fmt.Println(split(17))
 
 	var i int
 	fmt.Println(i, c, python, java)
+	short_variable()
 }
