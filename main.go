@@ -26,6 +26,14 @@ func Multiply(x, y int) int {
 	return x * y
 }
 
+func sum_loop() {
+	sum := 0
+	for i := 0; i < 10; i++ {
+		sum += i
+	}
+	fmt.Println("result of sum loop:", sum)
+}
+
 func main() {
 	fmt.Println(add(42, 13))
 	fmt.Println(split(17))
@@ -36,4 +44,6 @@ func main() {
 
 	var m = Multiply(2, 3)
 	fmt.Printf("m is of type %T %v\n", m, m)
+
+	sum_loop()
 }
