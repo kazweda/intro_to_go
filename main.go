@@ -12,7 +12,12 @@ func split(sum int) (x, y int) {
 	return
 }
 
+var c, python, java bool
+
 func main() {
 	fmt.Println(add(42, 13))
 	fmt.Println(split(17))
+
+	var i int
+	fmt.Println(i, c, python, java)
 }
