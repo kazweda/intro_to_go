@@ -44,6 +44,22 @@ func sqrt(x float64) string {
 	return fmt.Sprint(math.Sqrt(x))
 }
 
+func fizzbuzz() {
+	i := 1
+	for i <= 30 {
+		if i%3 == 0 && i%5 == 0 {
+			fmt.Println("Fizz Buzz")
+		} else if i%3 == 0 {
+			fmt.Println("Fizz")
+		} else if i%5 == 0 {
+			fmt.Println("Buzz")
+		} else {
+			fmt.Println(i)
+		}
+		i++
+	}
+}
+
 func main() {
 	fmt.Println(add(42, 13))
 	fmt.Println(split(17))
@@ -57,4 +73,6 @@ func main() {
 
 	sum_loop()
 	fmt.Println(sqrt(2), sqrt(-4))
+
+	fizzbuzz()
 }
