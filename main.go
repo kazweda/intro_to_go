@@ -2,7 +2,10 @@ package main
 
 import (
 	"fmt"
+	"io"
+	"log"
 	"math"
+	"net/http"
 )
 
 func add(x int, y int) int {
@@ -64,15 +67,24 @@ func main() {
 	fmt.Println(add(42, 13))
 	fmt.Println(split(17))
 
-	var i int
-	fmt.Println(i, c, python, java)
-	short_variable()
+	// var i int
+	// fmt.Println(i, c, python, java)
+	// short_variable()
 
-	var m = Multiply(2, 3)
-	fmt.Printf("m is of type %T %v\n", m, m)
+	// var m = Multiply(2, 3)
+	// fmt.Printf("m is of type %T %v\n", m, m)
 
-	sum_loop()
-	fmt.Println(sqrt(2), sqrt(-4))
+	// sum_loop()
+	// fmt.Println(sqrt(2), sqrt(-4))
 
-	fizzbuzz()
+	// fizzbuzz()
+
+	// Hello world, the web server
+
+	helloHandler := func(w http.ResponseWriter, req *http.Request) {
+		io.WriteString(w, "Hello, world!\n")
+	}
+
+	http.HandleFunc("/hello", helloHandler)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
